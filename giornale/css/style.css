@@ -1,0 +1,54 @@
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  width: 75%;
+  margin: 0 auto;
+}
+
+nav ul li {
+  /* display:inline-block; */
+  margin-bottom: 40px;
+  /* float: left; */
+}
+
+nav ul {
+  /* font-size: 0; */
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  background-color: red;
+  font-size: 16px;
+}
+nav ul li a:hover {
+  color: red;
+  background-color: white;
+}
+
+header h1 {
+  margin: 20px 0 40px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.artSec {
+  display: flex;
+  max-height: 100px;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+.over {
+  overflow: auto;
+  height: 68px;
+}
