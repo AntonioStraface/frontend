@@ -8,6 +8,13 @@ body {
       HEADER
 *****************************/
 
+header {
+  position: fixed;
+  width: 75%;
+  top: 0;
+  background: #fff;
+}
+
 header h1 {
   margin: 20px 0 40px;
   font-size: 2em;
@@ -28,8 +35,7 @@ nav ul {
   align-items: center;
 }
 
-nav ul li > a,
-span {
+nav ul li > a {
   text-decoration: none;
   color: white;
   padding: 20px;
@@ -37,8 +43,19 @@ span {
   font-size: 16px;
 }
 
-nav ul li > a:hover,
-span:hover {
+nav ul li > a:hover{
+  color: red;
+  background-color: white;
+}
+
+span {
+  color: white;
+  padding: 20px;
+  background-color: red;
+  font-size: 16px;
+}
+
+span:hover{
   color: red;
   background-color: white;
 }
@@ -80,10 +97,8 @@ nav {
       MAIN
 *****************************/
 
-.clearfix {
-  content: "";
-  display: table;
-  clear: both;
+main {
+  margin-top: 192px;
 }
 
 .art-sec {
