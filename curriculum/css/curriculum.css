@@ -1,3 +1,4 @@
+
 body {
  height: 200vh;
  font-family: roboto;
@@ -13,6 +14,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    padding: 0px 9px;
+}
+.titolo{
+  font-size: 40px;
+
 }
 
 .menu ul {
@@ -45,6 +52,7 @@ body {
   top: 0;
   background-color: red;
   width: 100%;
+  height: 136px;
 
 }
 .mainImage img{
