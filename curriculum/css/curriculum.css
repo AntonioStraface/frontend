@@ -2,9 +2,22 @@
  height: 100vh;   
 } per provare se e' centrato*/
 
-.wrapper{
-max-width: 1920px;
-min-width: 1024px;
-margin: 0 auto;
+.wrapper {
+    max-width: 1920px;
+    min-width: 1024px;
+    margin: 0 auto;
 }
 
+.inner_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu ul li {
+    padding: 10px;
+}
