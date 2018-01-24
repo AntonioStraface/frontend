@@ -58,6 +58,7 @@ body {
   width: 100%;
   height: 136px;
   border-bottom: 3px solid orange;
+  z-index: 100;
 
 }
 .mainImage img{
@@ -65,12 +66,6 @@ body {
 }
 .space{
  margin-top: 292px;
-}
-
-.about header {
-  font-size: 40px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 29px;
 }
 
 .testo,
@@ -92,6 +87,12 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 73px;
+}
+
+.borderDecorationBotPerLuca header{
+    font-size: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 29px;
 }
 
 .progressBar{
@@ -122,3 +123,43 @@ body {
 .color3{
   background-color: blue;
 }
+
+.singleProject{
+  position: relative;
+  width: 25%;
+}
+
+
+.overlay{
+  position: absolute;
+  top: 0;
+  background-color: rgba(144, 189, 236, 0.5);
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+
+  z-index: 50;
+}
+
+.immagineProj{
+  width: 100%;
+}
+
+.singleProject a:hover .overlay{
+  visibility: visible;
+  text-align: center;
+}
+
+.maxDim{
+  width: 100%;
+  height: 100%;
+}
+
+.parCenter{
+  position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translateY(-50%);
+
+  }
