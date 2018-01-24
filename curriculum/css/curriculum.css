@@ -1,8 +1,10 @@
-body{
- height: 100vh;
-}
+/*body{
+ height: 100vh;   
+} per provare se e' centrato*/
+
 .wrapper{
 max-width: 1920px;
 min-width: 1024px;
-background-color: aqua;
+margin: 0 auto;
 }
+
