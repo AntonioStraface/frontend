@@ -93,3 +93,32 @@ body {
   flex-direction: row;
   margin-top: 73px;
 }
+
+.progressBar{
+  position: relative;
+  background-color: lightgrey;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  left:0;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.barra{
+  position: absolute;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.color1{
+  background-color: green;
+}
+
+.color2{
+  background-color: yellow;
+}
+
+.color3{
+  background-color: blue;
+}
