@@ -30,8 +30,10 @@ body {
   visibility: hidden;
   position: absolute;
   flex-direction: column;
-
+  max-height: 190px;
+  overflow: auto;
   top:36px;
+  background-color:red;
 }
 .menbar:hover  .dropdown{
   visibility: visible;
