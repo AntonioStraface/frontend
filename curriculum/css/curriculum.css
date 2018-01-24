@@ -1,6 +1,6 @@
-/*body{
- height: 100vh;
-} per provare se e' centrato*/
+body {
+ height: 200vh;
+}
 
 .wrapper {
     max-width: 1920px;
@@ -33,7 +33,14 @@
 
   top:36px;
 }
-.menbar:hover + .dropdown{
+.menbar:hover  .dropdown{
   visibility: visible;
+}
+
+.stickyHeader{
+  position: fixed;
+  top: 0;
+  background-color: red;
+  width: 100%;
 
 }
