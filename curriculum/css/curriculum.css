@@ -67,6 +67,29 @@ body {
  margin-top: 292px;
 }
 
-.spaceabout header{
-  font-size: 35px;
+.about header {
+  font-size: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 29px;
+}
+
+.testo,
+.grafico {
+  width: 50%;
+}
+
+.testo {
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.grafico h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.wrapperAbout {
+  display: flex;
+  flex-direction: row;
+  margin-top: 73px;
 }
