@@ -1,5 +1,5 @@
 /*body{
- height: 100vh;   
+ height: 100vh;
 } per provare se e' centrato*/
 
 .wrapper {
@@ -20,4 +20,15 @@
 
 .menu ul li {
     padding: 10px;
+}
+
+.menbar {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  flex-direction: column;
+
+  top:36px;
 }
