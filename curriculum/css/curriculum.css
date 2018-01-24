@@ -27,8 +27,13 @@
 }
 
 .dropdown {
+  visibility: hidden;
   position: absolute;
   flex-direction: column;
 
   top:36px;
+}
+.menbar:hover + .dropdown{
+  visibility: visible;
+
 }
