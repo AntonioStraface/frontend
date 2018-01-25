@@ -138,11 +138,11 @@ body {
 
 .overlay{
   position: absolute;
-  top: 0;
+  top: 25px;
   background-color: rgba(144, 189, 236, 0.5);
   visibility: hidden;
   width: calc(100% - 50px);
-  height: calc(100% - 50px);
+  height: calc(100% - 52px);
 
 
   z-index: 50;
@@ -167,5 +167,6 @@ body {
       top: 50%;
       width: 100%;
       text-align: center;
+      color: #000;
       transform: translateY(-50%);
   }
