@@ -1,0 +1,67 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  min-width: 320px;
+}
+
+.fix{
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  line-height: 40px;
+  width: 100%;
+}
+
+.primoBlocco{
+  display: flex;
+  width: 100%;
+  height: 50px;
+
+  background-color: #e6f2ff;
+}
+
+.cerca{
+  width: 20%;
+}
+
+.titolo{
+  text-align: center;
+  width: 60%;
+}
+
+.menu{
+  text-align: right;
+  width: 20%;
+}
+
+main{
+  margin-top: 100px;
+}
+
+.imm{
+  margin-top: 30px;
+}
+
+.immagine{
+  width: 100%;
+}
+
+.secBloc{
+  display: flex;
+  height: 40px;
+  width: 100%;
+  background-color: #f6f7fa;
+
+}
+
+.secTitolo{
+  text-align: left;
+  width: 80%;
+}
+
+.iconaV{
+  text-align: right;
+  width: 20%;
+}
