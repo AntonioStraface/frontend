@@ -143,8 +143,6 @@ body {
   visibility: hidden;
   width: calc(100% - 50px);
   height: calc(100% - 52px);
-
-
   z-index: 50;
 }
 
