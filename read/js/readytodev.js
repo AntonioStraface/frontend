@@ -2,11 +2,12 @@
 var $body = $('body');
 var $buttonMenu = $('.menu');
 var $find = $('.cerca');
-var $arrow = $('.iconaV');
+var $arrow = $('.freccia');
 
 var MENU = 'menuOpened';
 var TEXTSEARCH = 'textSearchOpened';
 var FILTER = 'filterOpened';
+var OVERLAY = "seeOverlay";
 
 var _manageClass = function(classToggle) {
     $body.toggleClass(classToggle);
@@ -14,6 +15,7 @@ var _manageClass = function(classToggle) {
 
 $buttonMenu.on('click', function() {
   _manageClass(MENU);
+  _manageClass(OVERLAY);
 });
 
 $find.on('click', function() {
