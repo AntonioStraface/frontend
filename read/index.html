@@ -15,19 +15,25 @@
 <body>
   <header class="fix">
     <div class="primoBlocco">
-      <div class="cerca">
+      <div class="cerca ciao">
         <i class="fa fa-search" aria-hidden="true"></i>
       </div>
       <div class="titolo">
         <h1>Ready to dev</h1>
       </div>
       <div class="menu">
-        <i class="fa fa-bars menu-button" id="open-menu" aria-hidden="true"></i>
-        <i class="fa fa-times menu-button" id="close-menu" aria-hidden="true"></i>
+        <i class="fa fa-bars menu-button pointer" id="open-menu" aria-hidden="true"></i>
+        <i class="fa fa-times menu-button pointer" id="close-menu" aria-hidden="true"></i>
       </div>
     </div>
 
     <section id="overlay"></section>
+
+    <section class="search-bar">
+      <i class="fa fa-times pointer cerca" aria-hidden="true"></i>
+      <input class="text" type="text" name="" placeholder="Search">
+      <i class="fa fa-search pointer" aria-hidden="true"></i>
+    </section>
 
     <section class="menu-container">
       <img src="http://via.placeholder.com/640x320">
@@ -46,9 +52,23 @@
         <h3> FILTRA </h3>
       </div>
       <div class="freccia">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <i class="pointer fa fa-angle-down" aria-hidden="true"></i>
       </div>
     </section>
+
+    <section class="filter-container">
+      <div class="filter">FILTRO</div>
+      <ul class="sugg">
+        <li>Suggerimento</li>
+        <li>Suggerimento</li>
+      </ul>
+        <div class="filter">FILTRO</div>
+        <ul class="sugg">
+          <li>Suggerimento</li>
+          <li>Suggerimento</li>
+        </ul>
+    </section>
+
   </header>
 
   <main>
