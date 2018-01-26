@@ -1,6 +1,6 @@
 
 var $body = $('body');
-var $buttonMenu = $('.menu');
+var $buttonMenu = $('.menu-button');
 var $find = $('.cerca');
 var $arrow = $('.freccia');
 

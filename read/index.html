@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/site.css">
-    <title>mobile</title>
-  </head>
-  <body>
-    <header class="fix">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>mobile</title>
+
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<body>
+  <header class="fix">
     <div class="primoBlocco">
       <div class="cerca">
         <i class="fa fa-search" aria-hidden="true"></i>
       </div>
       <div class="titolo">
-        <h1> READ TO DIV </h1>
+        <h1>Ready to dev</h1>
       </div>
       <div class="menu">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <i class="fa fa-bars menu-button" id="open-menu" aria-hidden="true"></i>
+        <i class="fa fa-times menu-button" id="close-menu" aria-hidden="true"></i>
       </div>
     </div>
-      <section class="secBloc">
-        <div class="secTitolo">
-          <h3> FILTRA </h3>
-        </div>
-        <div class="freccia">
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </div>
-      </section>
-      </header>
-    <main>
-      <section class="imm">
-        <article>
-          <img src="http://via.placeholder.com/640x768" alt="descrizione immagine" class="immagine">
-        </article>
-        <article>
-          <img src="http://via.placeholder.com/640x768" alt="descrizione immagine" class="immagine">
-        </article>
-      </section>
-    </main>
-  </body>
+
+    <section id="overlay"></section>
+
+    <section class="menu-container">
+      <img src="http://via.placeholder.com/640x320">
+      <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="secBloc">
+      <div class="secTitolo">
+        <h3> FILTRA </h3>
+      </div>
+      <div class="freccia">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="imm">
+      <article>
+        <img src="http://via.placeholder.com/640x768" alt="descrizione immagine" class="immagine">
+      </article>
+      <article>
+        <img src="http://via.placeholder.com/640x768" alt="descrizione immagine" class="immagine">
+      </article>
+    </section>
+  </main>
+
+</body>
   <script
   src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="

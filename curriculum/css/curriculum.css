@@ -19,7 +19,10 @@ body {
 }
 .titolo{
   font-size: 40px;
+}
 
+.titolo h1 {
+  text-transform: uppercase;
 }
 
 .menu ul {

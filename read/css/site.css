@@ -29,11 +29,72 @@ body{
 .titolo{
   text-align: center;
   width: 60%;
+  text-transform: uppercase;
+}
+
+.menu-button {
+  cursor: pointer;
 }
 
 .menu{
   text-align: right;
   width: 20%;
+}
+
+.menu-container {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  width: calc(100% - 50px);
+  height: 100%;
+  background: #fff;
+  display: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.menu-container ul li {
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+.menu-container ul li:hover {
+  background: #e6f2ff;
+}
+
+.menu-container ul li a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+}
+
+#overlay {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: calc(100% - 50px);
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#close-menu {
+  display: none;
+  height: 100%;
+  font-size: 20px;
+}
+
+.menuOpened .menu-container,
+.seeOverlay #overlay
+{
+  display: block;
+}
+
+.menuOpened #close-menu {
+  display: inline-block;
+}
+
+.menuOpened #open-menu {
+  display: none;
 }
 
 main{
