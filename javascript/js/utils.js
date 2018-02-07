@@ -48,3 +48,14 @@ var eliminaParola = function(frase, parola) {
 
     return temp.join(" ");
 }
+
+
+
+var accendi = function(){
+  var dataInterr =   $(this).attr('data-interruttore');
+
+  $(".lampadina[data-interruttore = "+ dataInterr + "]").toggleClass('lampadinaAccesa');
+
+}
+
+$('.pulsante').on('click', accendi);

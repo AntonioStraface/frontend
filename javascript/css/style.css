@@ -1,0 +1,12 @@
+svg {
+  height: 400px;
+}
+
+.lampadinaAccesa{
+  fill: rgb(14, 104, 128);
+}
+
+.pulsante{
+  color: rgb(228, 204, 202);
+  background: rgb(123, 13, 134);
+}
