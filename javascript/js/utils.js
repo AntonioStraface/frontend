@@ -26,3 +26,11 @@ var sceltaoperazione = function (scelta,array){
   }
   return risultato ;
 }
+
+
+
+
+
+var removeParola = function(frase, parola){
+  return frase.replace(new RegExp(parola, "igm"),"");
+}
