@@ -1,15 +1,3 @@
-.cariola{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.mattone{
-  border:3px solid black;
-  height: 50px;
-  width: 50px;
-}
-
 .bottoni{
   margin-bottom: 50px;
   display: flex;
@@ -17,10 +5,21 @@
   justify-content: space-between;
 }
 
-.creatore{
-  border: 3px solid red;
+    .creatore{
+      border: 3px solid red;
+    }
+
+    .distruttore{
+      border: 3px solid green;
+    }
+.cariola{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.distruttore{
-    border: 3px solid green;
-  }
+    .mattone{
+      border:3px solid black;
+      height: 50px;
+      width: 50px;
+    }
