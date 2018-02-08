@@ -2,6 +2,7 @@ svg {
   height: 400px;
 }
 
+
 .lampadinaAccesa{
   fill: rgb(14, 104, 128);
 }
@@ -9,4 +10,22 @@ svg {
 .pulsante{
   color: rgb(228, 204, 202);
   background: rgb(123, 13, 134);
+  padding: 20px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: 20px;
+}
+
+.pulsante:hover {
+  background-color : white;
+  border: 1px solid  rgb(123, 13, 134);
+  color: rgb(123, 13, 134);
+}
+
+
+@media screen and (min-width: 768px){
+  .set-lampade {
+    display: flex;
+  }
 }

@@ -7,8 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-<div>
-<svg class="lampadina" data-interruttore = "1" viewBox="0 0 600 600">
+  <section class="set-lampade">
+<div class="sezione-lampada">
+<svg class="lampadina" data-interruttore = "1"  viewBox="0 0 600 600">
 <path d="M256,32c77.313,0,140,62.688,140,140c0,76.125-45.875,85-54.5,168c0,7.75-6.25,14-14,14h-143c-7.75,0-14-6.25-14-14h-0.031
 	C161.875,257,116,248.125,116,172C116,94.688,178.688,32,256,32 M326,368c7.75,0,14,6.25,14,14s-6.25,14-14,14H186
 	c-7.75,0-14-6.25-14-14s6.25-14,14-14H326 M326,410c7.75,0,14,6.25,14,14s-6.25,14-14,14H186c-7.75,0-14-6.25-14-14s6.25-14,14-14
@@ -20,9 +21,10 @@
 	c0-7-1.563-13.625-4.375-19.531c3.406-6.063,5.469-12.969,5.813-20.281c3.625-32.906,13.656-50.594,25.281-71.063
 	C412.438,247,428,219.625,428,172C428,77.156,350.844,0,256,0L256,0z"/>
 </svg>
+<a href = "#" class = "pulsante singolo"  data-interruttore = "1" > ACCENDI </a>
 </div>
 
-<div>
+<div class="sezione-lampada">
 <svg class="lampadina" data-interruttore = "2" viewBox="0 0 600 600">
 <path d="M256,32c77.313,0,140,62.688,140,140c0,76.125-45.875,85-54.5,168c0,7.75-6.25,14-14,14h-143c-7.75,0-14-6.25-14-14h-0.031
 	C161.875,257,116,248.125,116,172C116,94.688,178.688,32,256,32 M326,368c7.75,0,14,6.25,14,14s-6.25,14-14,14H186
@@ -35,10 +37,11 @@
 	c0-7-1.563-13.625-4.375-19.531c3.406-6.063,5.469-12.969,5.813-20.281c3.625-32.906,13.656-50.594,25.281-71.063
 	C412.438,247,428,219.625,428,172C428,77.156,350.844,0,256,0L256,0z"/>
 </svg>
+<a href = "#" class = "pulsante singolo"  data-interruttore = "2"> ACCENDI </a>
 </div>
+</section>
+<a href ="#" class="pulsante interruttore-generale" data-interruttore = "" >INTERRUTTORE GENERALE </a>
 
-<a href = "#" class = "pulsante"  data-interruttore = "1"> ACCENDI </a>
-<a href = "#" class = "pulsante"  data-interruttore = "2"> ACCENDI </a>
 </body>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 <script src="/js/utils.js"></script>

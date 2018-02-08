@@ -51,11 +51,23 @@ var eliminaParola = function(frase, parola) {
 
 
 
+
+var $tasto = $(".singolo");
+var $lampada = $(".lampadina");
+var $intgen = $(".interruttore-generale");
+
+
 var accendi = function(){
-  var dataInterr =   $(this).attr('data-interruttore');
+  var $this = $(this);
+  var dataInterr =   $this.attr('data-interruttore');
 
   $(".lampadina[data-interruttore = "+ dataInterr + "]").toggleClass('lampadinaAccesa');
 
 }
 
-$('.pulsante').on('click', accendi);
+var inter = function () {
+  $lampada.toggleClass("lampadinaAccesa");
+}
+
+$tasto.on('click', accendi);
+$intgen.on("click",inter);
