@@ -10,45 +10,48 @@ var ListManager = (function () {
     $remove = $(".remove");
   };
 
-   /* PRIVATE BUSINESS FUNCTIONS */
+  /* PRIVATE BUSINESS FUNCTIONS */
   var add = function($this) {
     var val = $this.closest(WRAPPER).find("INPUT").val();
     console.log(_search($this, val));
-    if(!_search($this, val)){
+    if(_search($this, val) === -1){
       $this.closest(WRAPPER).find("UL").append("<LI>"+val+"</LI>");
     }
   };
 
   var remove = function($this){
-
+    var val = $this.closest(WRAPPER).find("INPUT").val();
+    var tmpIndex = _search($this, val);
+    if(tmpIndex !== -1){
+      $this.closest(WRAPPER).find("LI").get(tmpIndex).remove();
+    }
   };
 
   var _search = function($this, value){
-    var check = false;
     var $li = $this.closest(WRAPPER).find("li");
-    $li.each(function(){
+    var found = -1;
+    $li.each(function(index){
       if($(this).text() === value){
-        check = true;
-        return true;
+        found = index;
       }
     });
-    return check;
+    return found;
   };
 
   var _privateFunctionBis = function() {
   };
   /* END PRIVATE BUSINESS FUNCTIONS */
 
-   /* DECLARING EVENT HANDLER */
+  /* DECLARING EVENT HANDLER */
   function _setObserver() {
     $add.on('click',function(){
-        var $this = $(this);
-        add($this);
+      var $this = $(this);
+      add($this);
     });
 
     $remove.on('click',function(){
-        var $this = $(this);
-        remove($this);
+      var $this = $(this);
+      remove($this);
     });
   };
 
@@ -58,8 +61,8 @@ var ListManager = (function () {
       _setObserver();
     }
     catch(e) {
-        console.log('%c ' + e.message, 'color:red');
-        console.log('%c ' + e.stack, 'background: #222; color: #bada55');
+      console.log('%c ' + e.message, 'color:red');
+      console.log('%c ' + e.stack, 'background: #222; color: #bada55');
     }
   }
 
