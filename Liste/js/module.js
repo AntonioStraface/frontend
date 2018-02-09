@@ -1,11 +1,9 @@
 var ListManager = (function () {
 
   /* DECLARING VARIABLES */
-  var $add;
-  var $remove;
-  var $wrapper;
-  var $scelta;
+  var $add, $remove, $wrapper, $scelta, $addCommander,$removeCommander ,currentSelection ;
 
+  var WRAPPERTOTAL = ".sectionTotal";
   var WRAPPER = ".section";
   /* CACHING VARIABLES */
   function _setup() {
@@ -13,36 +11,50 @@ var ListManager = (function () {
     $remove = $(".remove");
     $wrapper = $(".section");
     $scelta = $(".scelta");
+    $addCommander = $(".add-commander");
+    $removeCommander = $(".remove-commander");
     creaSelect();
   };
 
   var creaSelect = function(){
-    $wrapper.each(function(){
+    $wrapper.each(function(index){
       var data = $(this).attr("data-lista");
       var op = "<option>" + data + "</option>";
       $scelta.append(op);
+      if(index === 0)
+      currentSelection = data;
     });
   };
 
   /* PRIVATE BUSINESS FUNCTIONS */
-  var add = function($this) {
-    var val = $this.closest(WRAPPER).find("INPUT").val();
+  var add = function($this,val) {
     console.log(_search($this, val));
     if(_search($this, val) === -1){
-      $this.closest(WRAPPER).find("UL").append("<LI>"+val+"</LI>");
+      $this.find("UL").append("<LI>"+val+"</LI>");
     }
   };
+  var addCommander = function($this) {
+    var val = $this.find("INPUT").val();
+    add($(".section[data-lista="+currentSelection+"]"), val);
+  };
 
-  var remove = function($this){
-    var val = $this.closest(WRAPPER).find("INPUT").val();
+  var updateSelection = function($this){
+    currentSelection = $this.val();
+  }
+
+  var removeCommander = function($this) {
+    var val = $this.find("INPUT").val();
+    remove($(".section[data-lista="+currentSelection+"]"), val);
+  };
+  var remove = function($this,val){
     var tmpIndex = _search($this, val);
     if(tmpIndex !== -1){
-      $this.closest(WRAPPER).find("LI").get(tmpIndex).remove();
+      $this.find("LI").get(tmpIndex).remove();
     }
   };
 
   var _search = function($this, value){
-    var $li = $this.closest(WRAPPER).find("li");
+    var $li = $this.find("li");
     var found = -1;
     $li.each(function(index){
       if($(this).text() === value){
@@ -60,13 +72,27 @@ var ListManager = (function () {
   function _setObserver() {
     $add.on('click',function(){
       var $this = $(this);
-      add($this);
+      add($this.closest(WRAPPER),$this.closest(WRAPPER).find("INPUT").val());
     });
 
     $remove.on('click',function(){
       var $this = $(this);
-      remove($this);
+      remove($this.closest(WRAPPER),$this.closest(WRAPPER).find("INPUT").val());
     });
+
+    $addCommander.on("click",function(){
+      var $this = $(this);
+      addCommander($this.closest(WRAPPERTOTAL));
+    });
+
+    $removeCommander.on('click',function(){
+      var $this = $(this);
+      removeCommander($this.closest(WRAPPERTOTAL));
+    });
+    $scelta.on("change",function() {
+      var $this = $(this);
+      updateSelection($this);
+    })
   };
 
   function _init() {
