@@ -17,8 +17,8 @@ var distruzioneTotale= function(){
 };
 
 var eliminaMattone = function() {
-    var $this = $(this);
-    $this.closest(".mattone").remove();
+  var $this = $(this);
+  $this.closest(".mattone").remove();
 }
 
 //handler
