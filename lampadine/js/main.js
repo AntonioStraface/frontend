@@ -3,12 +3,8 @@ var $lampada = $(".lampadina");
 var $intgen = $(".interruttore-generale");
 
 var accendi = function($this){
-
-
   var dataInterr =   $this.attr('data-interruttore');
-
   $(".lampadina[data-interruttore = "+ dataInterr + "]").toggleClass('lampadinaAccesa');
-
 }
 
 var stoppaLink = function (e) {
