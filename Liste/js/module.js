@@ -12,12 +12,27 @@ var ListManager = (function () {
 
    /* PRIVATE BUSINESS FUNCTIONS */
   var add = function($this) {
-    var $val = $this.closest(WRAPPER).find("INPUT").val();
-    $this.closest(WRAPPER).find("UL").append("<LI>"+$val+"</LI>");
+    var val = $this.closest(WRAPPER).find("INPUT").val();
+    console.log(_search($this, val));
+    if(!_search($this, val)){
+      $this.closest(WRAPPER).find("UL").append("<LI>"+val+"</LI>");
+    }
   };
 
   var remove = function($this){
 
+  };
+
+  var _search = function($this, value){
+    var check = false;
+    var $li = $this.closest(WRAPPER).find("li");
+    $li.each(function(){
+      if($(this).text() === value){
+        check = true;
+        return true;
+      }
+    });
+    return check;
   };
 
   var _privateFunctionBis = function() {
