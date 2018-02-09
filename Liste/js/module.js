@@ -3,11 +3,25 @@ var ListManager = (function () {
   /* DECLARING VARIABLES */
   var $add;
   var $remove;
+  var $wrapper;
+  var $scelta;
+
   var WRAPPER = ".section";
   /* CACHING VARIABLES */
   function _setup() {
     $add = $(".add");
     $remove = $(".remove");
+    $wrapper = $(".section");
+    $scelta = $(".scelta");
+    creaSelect();
+  };
+
+  var creaSelect = function(){
+    $wrapper.each(function(){
+      var data = $(this).attr("data-lista");
+      var op = "<option>" + data + "</option>";
+      $scelta.append(op);
+    });
   };
 
   /* PRIVATE BUSINESS FUNCTIONS */
