@@ -16,11 +16,10 @@ ul
 
 .center
 {
-  width: 100%;
   text-align: center;
 }
 
-button
+button, select
 {
   min-width: 60px;
 
@@ -45,6 +44,24 @@ button:hover
 button[disabled]
 {
   color: #BBB;
+}
+
+button[disabled]:hover
+{
+  cursor: not-allowed;
+
+  background: rgba(0, 0, 0, 0);
+  color: #BBB;
+}
+
+select
+{
+	padding: 4px;
+}
+
+li
+{
+	padding: 5px;
 }
 
 input[type=text]
