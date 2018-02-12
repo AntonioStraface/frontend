@@ -1,0 +1,26 @@
+.preferiti {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.element {
+  font-size: 12px;
+}
+
+.card-header {
+  font-size: 18px;
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+.inputWrapper input {
+  margin-bottom: 30px;
+}
+
+article {
+  margin: 10px 0 80px;
+}
+
+.nascondi {
+  display: none;
+}
