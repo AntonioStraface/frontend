@@ -3,9 +3,7 @@ var ListManager = (function ()
 
   /* DECLARING VARIABLES */
 
-  var $add, $remove, $wrapper, $scelta,
-      $addCommander, $removeCommander,
-      currentSelection, $inputsTypeText;
+  var $add, $remove, $wrapper, $inputsTypeText;
 
   var WRAPPERTOTAL = ".sectionTotal";
   var WRAPPER = ".section";
@@ -17,26 +15,9 @@ var ListManager = (function ()
     $add = $(".add");
     $remove = $(".remove");
     $wrapper = $(".section");
-    $wrapperTotal = $(".sectionTotal");
-    $scelta = $(".scelta");
-    $addCommander = $(".add-commander");
-    $removeCommander = $(".remove-commander");
     $inputsTypeText = $('input[type=text]');
-
-    creaSelect();
   };
 
-  var creaSelect = function()
-  {
-    $wrapper.each(function(index)
-    {
-      var data = $(this).attr("data-lista");
-      var op = "<option>" + data + "</option>";
-      $scelta.append(op);
-
-      if(index === 0) currentSelection = data;
-    });
-  };
 
   /* PRIVATE BUSINESS FUNCTIONS */
 
@@ -48,23 +29,6 @@ var ListManager = (function ()
     }
   };
 
-  var addCommander = function($this)
-  {
-    var val = $this.find("INPUT").val();
-
-    add($(".section[data-lista="+currentSelection+"]"), val);
-  };
-
-  var updateSelection = function($this)
-  {
-    currentSelection = $this.val();
-  }
-
-  var removeCommander = function($this)
-  {
-    var val = $this.find("INPUT").val();
-    remove($(".section[data-lista="+currentSelection+"]"), val);
-  };
 
   var remove = function($this,val)
   {
@@ -92,9 +56,6 @@ var ListManager = (function ()
     return found;
   };
 
-  /* END PRIVATE BUSINESS FUNCTIONS */
-
-  /* DECLARING EVENT HANDLER */
 
   function _setObserver()
   {
@@ -110,27 +71,6 @@ var ListManager = (function ()
       var $this = $(this);
 
       remove($this.closest(WRAPPER), $this.closest(WRAPPER).find("INPUT").val());
-    });
-
-    $addCommander.on("click",function()
-    {
-      var $this = $(this);
-
-      addCommander($this.closest(WRAPPERTOTAL));
-    });
-
-    $removeCommander.on('click',function()
-    {
-      var $this = $(this);
-
-      removeCommander($this.closest(WRAPPERTOTAL));
-    });
-
-    $scelta.on("change",function()
-    {
-      var $this = $(this);
-
-      updateSelection($this);
     });
 
     $inputsTypeText.on('keyup', function()
@@ -161,7 +101,9 @@ var ListManager = (function ()
   }
 
   return {
-    start: _init
+    start: _init,
+    add: add,
+    remove: remove
   };
 
 })();

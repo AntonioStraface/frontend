@@ -1,1 +1,2 @@
 ListManager.start();
+TotalCommanderModule.start();
