@@ -38,79 +38,83 @@ var getProdotto = (function () {
   var _diversiMenu = function(inputBir){
     var selezione = $("input[name='prodotto']:checked").attr("data-type");
 
+
       if(inputBir === ""){
-        _getPaginatore();
+        _getPaginatore({
+          page : pagina,
+          per_page : ELEMENTI});
       }
       else {
         if (inputBir.length > 0){
           if (selezione==="food"){
-            _getBirreFromFood(inputBir);
+            _getPaginatore({
+                  page:pagina,
+                  per_page: ELEMENTI,
+                  food: inputBir});
           }
           else {
-            _getBirre(inputBir);
+            _getPaginatore({
+                  page:pagina,
+                  per_page: ELEMENTI,
+                  beer_name : inputBir});
           }
         }
       }
   }
 
-  var _getPaginatore = function() {
-    var url=RESTURL;
-    $.ajax({
-      url:url,
-      type:"GET",
-      dataType:'json',
-      cache:false,
-      data:{
-        page:pagina,
-        per_page: ELEMENTI
-      },
-      success: function(data){
-        _filteringData(data)
-        pagina++;
-        $bottonepiu.removeAttr("disabled");
-      }
-    });
-  }
-
-  var _getBirre = function(val) {
-    var url=RESTURL;
-    $.ajax({
-      url:url,
-      type:"GET",
-      dataType:'json',
-      cache:false,
-      data:{
-        page:pagina,
-        per_page: ELEMENTI,
-        beer_name : val
-      },
-      success: function(data){
-        _filteringData(data)
-        pagina++;
-        $bottonepiu.removeAttr("disabled");
-      }
-    });
-  }
-
-  var _getBirreFromFood = function (nomeCibo) {
+  var _getPaginatore = function(data) {
     $.ajax({
       url:RESTURL,
-      type: "GET",
+      type:"GET",
       dataType:'json',
       cache:false,
-      data:{
-        page:pagina,
-        per_page: ELEMENTI,
-        food: nomeCibo
-      },
+      data: data,
       success: function(data){
         _filteringData(data)
         pagina++;
         $bottonepiu.removeAttr("disabled");
-
       }
     });
-  };
+  }
+  //
+  // var _getBirre = function(val) {
+  //   $.ajax({
+  //     url:RESTURL,
+  //     type:"GET",
+  //     dataType:'json',
+  //     cache:false,
+  //     data:{
+  //       page:pagina,
+  //       per_page: ELEMENTI,
+  //       beer_name : val
+  //     },
+  //     success: function(data){
+  //       _filteringData(data)
+  //       pagina++;
+  //       $bottonepiu.removeAttr("disabled");
+  //     }
+  //   });
+  // }
+  //
+  // var _getBirreFromFood = function (nomeCibo) {
+  //   $.ajax({
+  //     url:RESTURL,
+  //     type: "GET",
+  //     dataType:'json',
+  //     cache:false,
+  //     data:{
+  //       page:pagina,
+  //       per_page: ELEMENTI,
+  //       food: nomeCibo
+  //     },
+  //     success: function(data){
+  //       _filteringData(data)
+  //       pagina++;
+  //       $bottonepiu.removeAttr("disabled");
+  //
+  //     }
+  //   });
+  // };
 
 
   var _bloccoInvio = function(e){
