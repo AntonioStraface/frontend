@@ -3,12 +3,13 @@ var getProdotto = (function () {
   /* DECLARING VARIABLES */
   var RESTURL = "https://api.punkapi.com/v2/beers", ELEMENTI=4;
   var pagina = 1;
-  var $listaProdotti, $creoProd, $sceltaProdotto, $birraInserita;
+  var $listaProdotti, $creoProd, $sceltaProdotto, $birraInserita, $bottonepiu;
   /* CACHING VARIABLES */
   function _setup() {
     $listaProdotti = $('.prodotti');
     $sceltaProdotto = $('.sceltaProdotto');
     $birraInserita = $('.birraInserita');
+    $bottonepiu = $('.more');
     };
 
    /* PRIVATE BUSINESS FUNCTIONS */
@@ -27,7 +28,6 @@ var getProdotto = (function () {
   }
 
   var _diversiMenu = function(){
-    debugger;
     var inputBir = $birraInserita.val();
       if(inputBir === ""){
         _getPaginatore();
@@ -61,10 +61,13 @@ var getProdotto = (function () {
     $sceltaProdotto.on('submit', function(e){
         _bloccoInvio(e);
         _diversiMenu();
+    });
+      $bottonepiu.on("click",function(){
+        pagina++;
+        _getPaginatore();
+      })
 
-    }
-
-  )};
+  };
 
   function _init() {
     try {
