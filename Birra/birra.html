@@ -10,20 +10,19 @@
 </head>
 <body>
   <form class="sceltaProdotto">
-    <input class="birraInserita" type="text" name="richiesta">
+    <input class="birraInserita" type="text" name="richiesta" data-search ="">
     <button class="cerca" type="submit" name="button"> CERCA </button>
     <label for="beer"> BEER </label>
     <input id="beer" type="radio" name="prodotto" data-type="beer" checked >
     <label for="food"> FOOD </label>
     <input id="food" type="radio" name="prodotto" data-type="food">
-    <button class="more" type="button" name="bottonepiu">More 4</button>
   </form>
 
   <section class="listaProdotti">
     <ul class="prodotti">
 
     </ul>
-
+  <button class="more" type="button" name="bottonepiu" disabled="disabled" >More 4</button>
   </section>
 
 </body>

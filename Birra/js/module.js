@@ -27,11 +27,24 @@ var getProdotto = (function () {
     });
   }
 
-  var _diversiMenu = function(){
-    var inputBir = $birraInserita.val();
+  var _verificaRicerca = function (inputBir) {
+    if($birraInserita.attr("data-search") !== inputBir){
+      $listaProdotti.empty();
+      pagina = 1;
+      $birraInserita.attr("data-search",inputBir);
+    }
+
+  }
+  var _diversiMenu = function(inputBir){
+
       if(inputBir === ""){
         _getPaginatore();
-      };
+      }
+      else {
+        if (inputBir.length > 0){
+          _getBirre(inputBir);
+        }
+      }
   }
 
   var _getPaginatore = function() {
@@ -47,9 +60,32 @@ var getProdotto = (function () {
       },
       success: function(data){
         _filteringData(data)
+        pagina++;
+        $bottonepiu.removeAttr("disabled");
       }
     });
   }
+
+  var _getBirre = function(val) {
+    var url=RESTURL;
+    $.ajax({
+      url:url,
+      type:"GET",
+      dataType:'json',
+      cache:false,
+      data:{
+        page:pagina,
+        per_page: ELEMENTI,
+        beer_name : val
+      },
+      success: function(data){
+        _filteringData(data)
+        pagina++;
+        $bottonepiu.removeAttr("disabled");
+      }
+    });
+  }
+
 
   var _bloccoInvio = function(e){
     e.preventDefault();
@@ -59,12 +95,15 @@ var getProdotto = (function () {
    /* DECLARING EVENT HANDLER */
   function _setObserver() {
     $sceltaProdotto.on('submit', function(e){
+        var val = $birraInserita.val();
         _bloccoInvio(e);
-        _diversiMenu();
+        _verificaRicerca(val)
+        _diversiMenu(val);
     });
       $bottonepiu.on("click",function(){
-        pagina++;
-        _getPaginatore();
+        $bottonepiu.attr("disabled","disabled");
+        var val = $birraInserita.val();
+        _diversiMenu(val);
       })
 
   };
