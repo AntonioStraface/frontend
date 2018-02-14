@@ -4,8 +4,13 @@ var getProdotto = (function () {
   var RESTURL = "https://api.punkapi.com/v2/beers", ELEMENTI=4;
   var pagina = 1;
   var $listaProdotti, $creoProd, $sceltaProdotto, $birraInserita, $bottonepiu,$radioBTN;
+  var Data;
   /* CACHING VARIABLES */
   function _setup() {
+    Data = {
+      page : pagina,
+      per_page : ELEMENTI
+    };
     $listaProdotti = $('.prodotti');
     $sceltaProdotto = $('.sceltaProdotto');
     $birraInserita = $('.birraInserita');
@@ -40,29 +45,25 @@ var getProdotto = (function () {
 
 
       if(inputBir === ""){
-        _getPaginatore({
-          page : pagina,
-          per_page : ELEMENTI});
+        delete Data.beer_name;
+        delete Data.food;
       }
       else {
         if (inputBir.length > 0){
-          if (selezione==="food"){
-            _getPaginatore({
-                  page:pagina,
-                  per_page: ELEMENTI,
-                  food: inputBir});
+          if (selezione!=="beer"){
+            delete Data.beer_name;
+            Data.food=inputBir;
           }
           else {
-            _getPaginatore({
-                  page:pagina,
-                  per_page: ELEMENTI,
-                  beer_name : inputBir});
+            delete Data.food;
+            Data.beer_name=inputBir;
           }
         }
       }
+      _ajaxCall(Data);
   }
 
-  var _getPaginatore = function(data) {
+  var _ajaxCall = function(data) {
     $.ajax({
       url:RESTURL,
       type:"GET",
@@ -76,46 +77,6 @@ var getProdotto = (function () {
       }
     });
   }
-  //
-  // var _getBirre = function(val) {
-  //   $.ajax({
-  //     url:RESTURL,
-  //     type:"GET",
-  //     dataType:'json',
-  //     cache:false,
-  //     data:{
-  //       page:pagina,
-  //       per_page: ELEMENTI,
-  //       beer_name : val
-  //     },
-  //     success: function(data){
-  //       _filteringData(data)
-  //       pagina++;
-  //       $bottonepiu.removeAttr("disabled");
-  //     }
-  //   });
-  // }
-  //
-  // var _getBirreFromFood = function (nomeCibo) {
-  //   $.ajax({
-  //     url:RESTURL,
-  //     type: "GET",
-  //     dataType:'json',
-  //     cache:false,
-  //     data:{
-  //       page:pagina,
-  //       per_page: ELEMENTI,
-  //       food: nomeCibo
-  //     },
-  //     success: function(data){
-  //       _filteringData(data)
-  //       pagina++;
-  //       $bottonepiu.removeAttr("disabled");
-  //
-  //     }
-  //   });
-  // };
-
 
   var _bloccoInvio = function(e){
     e.preventDefault();
