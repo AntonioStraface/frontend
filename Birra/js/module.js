@@ -3,7 +3,7 @@ var getProdotto = (function () {
   /* DECLARING VARIABLES */
   var RESTURL = "https://api.punkapi.com/v2/beers", ELEMENTI=4;
   var pagina = 1;
-  var $listaProdotti, $creoProd, $sceltaProdotto, $birraInserita, $bottonepiu;
+  var $listaProdotti, $creoProd, $sceltaProdotto, $birraInserita, $bottonepiu,$radioBTN;
   /* CACHING VARIABLES */
   function _setup() {
     $listaProdotti = $('.prodotti');
@@ -36,13 +36,19 @@ var getProdotto = (function () {
 
   }
   var _diversiMenu = function(inputBir){
+    var selezione = $("input[name='prodotto']:checked").attr("data-type");
 
       if(inputBir === ""){
         _getPaginatore();
       }
       else {
         if (inputBir.length > 0){
-          _getBirre(inputBir);
+          if (selezione==="food"){
+            _getBirreFromFood(inputBir);
+          }
+          else {
+            _getBirre(inputBir);
+          }
         }
       }
   }
@@ -86,6 +92,26 @@ var getProdotto = (function () {
     });
   }
 
+  var _getBirreFromFood = function (nomeCibo) {
+    $.ajax({
+      url:RESTURL,
+      type: "GET",
+      dataType:'json',
+      cache:false,
+      data:{
+        page:pagina,
+        per_page: ELEMENTI,
+        food: nomeCibo
+      },
+      success: function(data){
+        _filteringData(data)
+        pagina++;
+        $bottonepiu.removeAttr("disabled");
+
+      }
+    });
+  };
+
 
   var _bloccoInvio = function(e){
     e.preventDefault();
@@ -96,6 +122,7 @@ var getProdotto = (function () {
   function _setObserver() {
     $sceltaProdotto.on('submit', function(e){
         var val = $birraInserita.val();
+
         _bloccoInvio(e);
         _verificaRicerca(val)
         _diversiMenu(val);
